@@ -24,7 +24,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'z@gb+pg0e#6up-!4opp2us!!!11#!-b=z1!69cwz3z0)f3ft)#'
 
-ALLOWED_HOSTS = ['buttlerdj.azurewebsites.net','127.0.0.1']
+ALLOWED_HOSTS = ['buttlerdj.herokuapp.com','buttlerdj.azurewebsites.net','127.0.0.1']
 
 
 # Application definition
