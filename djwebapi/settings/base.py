@@ -74,7 +74,18 @@ WSGI_APPLICATION = 'djwebapi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd3hhf7uuqs8urf',
+        'USER': 'iurwfyuzlevukw',
+        'PASSWORD': 'b284a25be8fd5f9c4d10dd0b854a7dd752ac9be36b2b1fc5d93e8f53466419b6',
+        'HOST': 'ec2-34-234-228-127.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -85,7 +96,6 @@ DATABASES = {
         'DATABASE_PORT':'5432',
     }
 }
-'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
