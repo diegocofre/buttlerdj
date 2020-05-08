@@ -26,6 +26,8 @@ class Track(BaseModel, models.Model):
     short_description = models.CharField(max_length=128)
     long_description = models.CharField(max_length=4086)
 
+    def __str__(self):
+        return self.name
 
 class Segment(BaseModel, models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -39,6 +41,10 @@ class Segment(BaseModel, models.Model):
         choices=TIME_UNITS, null=True, blank=True,max_length=1)
     end_message = models.CharField(null=True, blank=True, max_length=128)
     end_confirm = models.BooleanField()
+
+    def __str__(self):
+        return self.name
+
 
 
 
@@ -55,3 +61,6 @@ class Milestone(BaseModel, models.Model):
     periodicity = models.IntegerField(null=True, blank=True)
     periodicity_tunit = models.CharField(
         choices=TIME_UNITS, null=True, blank=True,max_length=1)
+
+    def __str__(self):
+        return self.name
