@@ -1,5 +1,4 @@
 from django.apps import AppConfig
 
-
-class GuideConfig(AppConfig):
+class TrackConfig(AppConfig):
     name = 'track'
