@@ -14,11 +14,8 @@ class BaseModel():
     updated_at = models.DateTimeField(
         auto_now=True, auto_now_add=False)
     deleted_at = models.DateTimeField(null=True, blank=True)
-
-
 class Meta:
     abstract = True
-
 
 class Track(BaseModel, models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -31,8 +28,7 @@ class Track(BaseModel, models.Model):
 
 class Segment(BaseModel, models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    id_track = models.ForeignKey(
-        "track.Track", verbose_name="", on_delete=models.CASCADE)
+    id_track = models.ForeignKey(Track,on_delete=models.CASCADE,related_name="segments")
     name = models.CharField(max_length=64)
     short_description = models.CharField(max_length=128)
     long_description = models.CharField(max_length=4086)
@@ -45,13 +41,9 @@ class Segment(BaseModel, models.Model):
     def __str__(self):
         return self.name
 
-
-
-
 class Milestone(BaseModel, models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    id_segment = models.ForeignKey(
-        "track.Segment", verbose_name="", on_delete=models.CASCADE)
+    id_segment = models.ForeignKey(Segment,on_delete=models.CASCADE,related_name="milestones")
     name = models.CharField(max_length=64)
     short_description = models.CharField(max_length=128)
     long_description = models.CharField(max_length=4086)
