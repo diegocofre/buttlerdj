@@ -9,7 +9,7 @@ distlib==0.3.0
 Django==3.0.7
 django-core==1.4.1
 django-db==0.0.7
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 filelock==3.0.12
 gunicorn==20.0.4
 idna==2.9
